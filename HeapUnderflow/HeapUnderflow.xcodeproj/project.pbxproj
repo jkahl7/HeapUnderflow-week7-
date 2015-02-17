@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4357C3EC1A92956400EAA98F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C3EB1A92956400EAA98F /* main.m */; };
+		4357C3EF1A92956400EAA98F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C3EE1A92956400EAA98F /* AppDelegate.m */; };
+		4357C3F21A92956400EAA98F /* HeapUnderflow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4357C3F01A92956400EAA98F /* HeapUnderflow.xcdatamodeld */; };
+		4357C3F81A92956400EAA98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4357C3F61A92956400EAA98F /* Main.storyboard */; };
+		4357C3FA1A92956400EAA98F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4357C3F91A92956400EAA98F /* Images.xcassets */; };
+		4357C3FD1A92956400EAA98F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4357C3FB1A92956400EAA98F /* LaunchScreen.xib */; };
+		4357C4091A92956400EAA98F /* HeapUnderflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C4081A92956400EAA98F /* HeapUnderflowTests.m */; };
+		4357C4171A92980A00EAA98F /* BurgerContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C4161A92980A00EAA98F /* BurgerContainerController.m */; };
+		4357C41A1A92B6AC00EAA98F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C4191A92B6AC00EAA98F /* MenuViewController.m */; };
+		4357C41E1A92BA2C00EAA98F /* WebOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C41D1A92BA2C00EAA98F /* WebOAuthViewController.m */; };
+		4357C4211A92C40A00EAA98F /* SearchQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C4201A92C40A00EAA98F /* SearchQuestionsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4357C4031A92956400EAA98F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4357C3DE1A92956400EAA98F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4357C3E51A92956400EAA98F;
+			remoteInfo = HeapUnderflow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4357C3E61A92956400EAA98F /* HeapUnderflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeapUnderflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4357C3EA1A92956400EAA98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4357C3EB1A92956400EAA98F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4357C3ED1A92956400EAA98F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4357C3EE1A92956400EAA98F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4357C3F11A92956400EAA98F /* HeapUnderflow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeapUnderflow.xcdatamodel; sourceTree = "<group>"; };
+		4357C3F71A92956400EAA98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4357C3F91A92956400EAA98F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4357C3FC1A92956400EAA98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4357C4021A92956400EAA98F /* HeapUnderflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeapUnderflowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4357C4071A92956400EAA98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4357C4081A92956400EAA98F /* HeapUnderflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeapUnderflowTests.m; sourceTree = "<group>"; };
+		4357C4151A92980A00EAA98F /* BurgerContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerContainerController.h; sourceTree = "<group>"; };
+		4357C4161A92980A00EAA98F /* BurgerContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerContainerController.m; sourceTree = "<group>"; };
+		4357C4181A92B6AC00EAA98F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		4357C4191A92B6AC00EAA98F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		4357C41B1A92B7A800EAA98F /* MenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDelegate.h; sourceTree = "<group>"; };
+		4357C41C1A92BA2C00EAA98F /* WebOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebOAuthViewController.h; sourceTree = "<group>"; };
+		4357C41D1A92BA2C00EAA98F /* WebOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebOAuthViewController.m; sourceTree = "<group>"; };
+		4357C41F1A92C40A00EAA98F /* SearchQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchQuestionsViewController.h; sourceTree = "<group>"; };
+		4357C4201A92C40A00EAA98F /* SearchQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchQuestionsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4357C3E31A92956400EAA98F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4357C3FF1A92956400EAA98F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4357C3DD1A92956400EAA98F = {
+			isa = PBXGroup;
+			children = (
+				4357C3E81A92956400EAA98F /* HeapUnderflow */,
+				4357C4051A92956400EAA98F /* HeapUnderflowTests */,
+				4357C3E71A92956400EAA98F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4357C3E71A92956400EAA98F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4357C3E61A92956400EAA98F /* HeapUnderflow.app */,
+				4357C4021A92956400EAA98F /* HeapUnderflowTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4357C3E81A92956400EAA98F /* HeapUnderflow */ = {
+			isa = PBXGroup;
+			children = (
+				4357C3ED1A92956400EAA98F /* AppDelegate.h */,
+				4357C3EE1A92956400EAA98F /* AppDelegate.m */,
+				4357C3F61A92956400EAA98F /* Main.storyboard */,
+				4357C3F91A92956400EAA98F /* Images.xcassets */,
+				4357C4141A92959E00EAA98F /* Model */,
+				4357C4131A92959900EAA98F /* View */,
+				4357C4121A92959300EAA98F /* Controller */,
+				4357C3E91A92956400EAA98F /* Supporting Files */,
+			);
+			path = HeapUnderflow;
+			sourceTree = "<group>";
+		};
+		4357C3E91A92956400EAA98F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4357C3EA1A92956400EAA98F /* Info.plist */,
+				4357C3EB1A92956400EAA98F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4357C4051A92956400EAA98F /* HeapUnderflowTests */ = {
+			isa = PBXGroup;
+			children = (
+				4357C4081A92956400EAA98F /* HeapUnderflowTests.m */,
+				4357C4061A92956400EAA98F /* Supporting Files */,
+			);
+			path = HeapUnderflowTests;
+			sourceTree = "<group>";
+		};
+		4357C4061A92956400EAA98F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4357C4071A92956400EAA98F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4357C4121A92959300EAA98F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4357C4151A92980A00EAA98F /* BurgerContainerController.h */,
+				4357C4161A92980A00EAA98F /* BurgerContainerController.m */,
+				4357C41B1A92B7A800EAA98F /* MenuDelegate.h */,
+				4357C4181A92B6AC00EAA98F /* MenuViewController.h */,
+				4357C4191A92B6AC00EAA98F /* MenuViewController.m */,
+				4357C41C1A92BA2C00EAA98F /* WebOAuthViewController.h */,
+				4357C41D1A92BA2C00EAA98F /* WebOAuthViewController.m */,
+				4357C41F1A92C40A00EAA98F /* SearchQuestionsViewController.h */,
+				4357C4201A92C40A00EAA98F /* SearchQuestionsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4357C4131A92959900EAA98F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4357C3FB1A92956400EAA98F /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4357C4141A92959E00EAA98F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4357C3F01A92956400EAA98F /* HeapUnderflow.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4357C3E51A92956400EAA98F /* HeapUnderflow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4357C40C1A92956400EAA98F /* Build configuration list for PBXNativeTarget "HeapUnderflow" */;
+			buildPhases = (
+				4357C3E21A92956400EAA98F /* Sources */,
+				4357C3E31A92956400EAA98F /* Frameworks */,
+				4357C3E41A92956400EAA98F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeapUnderflow;
+			productName = HeapUnderflow;
+			productReference = 4357C3E61A92956400EAA98F /* HeapUnderflow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4357C4011A92956400EAA98F /* HeapUnderflowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4357C40F1A92956400EAA98F /* Build configuration list for PBXNativeTarget "HeapUnderflowTests" */;
+			buildPhases = (
+				4357C3FE1A92956400EAA98F /* Sources */,
+				4357C3FF1A92956400EAA98F /* Frameworks */,
+				4357C4001A92956400EAA98F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4357C4041A92956400EAA98F /* PBXTargetDependency */,
+			);
+			name = HeapUnderflowTests;
+			productName = HeapUnderflowTests;
+			productReference = 4357C4021A92956400EAA98F /* HeapUnderflowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4357C3DE1A92956400EAA98F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Josh Kahl";
+				TargetAttributes = {
+					4357C3E51A92956400EAA98F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					4357C4011A92956400EAA98F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 4357C3E51A92956400EAA98F;
+					};
+				};
+			};
+			buildConfigurationList = 4357C3E11A92956400EAA98F /* Build configuration list for PBXProject "HeapUnderflow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4357C3DD1A92956400EAA98F;
+			productRefGroup = 4357C3E71A92956400EAA98F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4357C3E51A92956400EAA98F /* HeapUnderflow */,
+				4357C4011A92956400EAA98F /* HeapUnderflowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4357C3E41A92956400EAA98F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4357C3F81A92956400EAA98F /* Main.storyboard in Resources */,
+				4357C3FD1A92956400EAA98F /* LaunchScreen.xib in Resources */,
+				4357C3FA1A92956400EAA98F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4357C4001A92956400EAA98F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4357C3E21A92956400EAA98F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4357C4171A92980A00EAA98F /* BurgerContainerController.m in Sources */,
+				4357C3F21A92956400EAA98F /* HeapUnderflow.xcdatamodeld in Sources */,
+				4357C4211A92C40A00EAA98F /* SearchQuestionsViewController.m in Sources */,
+				4357C3EF1A92956400EAA98F /* AppDelegate.m in Sources */,
+				4357C3EC1A92956400EAA98F /* main.m in Sources */,
+				4357C41A1A92B6AC00EAA98F /* MenuViewController.m in Sources */,
+				4357C41E1A92BA2C00EAA98F /* WebOAuthViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4357C3FE1A92956400EAA98F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4357C4091A92956400EAA98F /* HeapUnderflowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4357C4041A92956400EAA98F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4357C3E51A92956400EAA98F /* HeapUnderflow */;
+			targetProxy = 4357C4031A92956400EAA98F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4357C3F61A92956400EAA98F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4357C3F71A92956400EAA98F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4357C3FB1A92956400EAA98F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4357C3FC1A92956400EAA98F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4357C40A1A92956400EAA98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4357C40B1A92956400EAA98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4357C40D1A92956400EAA98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeapUnderflow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4357C40E1A92956400EAA98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeapUnderflow/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4357C4101A92956400EAA98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeapUnderflowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeapUnderflow.app/HeapUnderflow";
+			};
+			name = Debug;
+		};
+		4357C4111A92956400EAA98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeapUnderflowTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeapUnderflow.app/HeapUnderflow";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4357C3E11A92956400EAA98F /* Build configuration list for PBXProject "HeapUnderflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4357C40A1A92956400EAA98F /* Debug */,
+				4357C40B1A92956400EAA98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4357C40C1A92956400EAA98F /* Build configuration list for PBXNativeTarget "HeapUnderflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4357C40D1A92956400EAA98F /* Debug */,
+				4357C40E1A92956400EAA98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4357C40F1A92956400EAA98F /* Build configuration list for PBXNativeTarget "HeapUnderflowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4357C4101A92956400EAA98F /* Debug */,
+				4357C4111A92956400EAA98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4357C3F01A92956400EAA98F /* HeapUnderflow.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4357C3F11A92956400EAA98F /* HeapUnderflow.xcdatamodel */,
+			);
+			currentVersion = 4357C3F11A92956400EAA98F /* HeapUnderflow.xcdatamodel */;
+			path = HeapUnderflow.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4357C3DE1A92956400EAA98F /* Project object */;
+}
