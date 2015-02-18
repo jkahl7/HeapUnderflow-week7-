@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="221"/>
         </scene>
-        <!--View Controller-->
+        <!--SearchQuestionsViewController-->
         <scene sceneID="VzW-P4-MSU">
             <objects>
-                <viewController id="qZp-gm-ha7" sceneMemberID="viewController">
+                <viewController id="qZp-gm-ha7" userLabel="SearchQuestionsViewController" customClass="SearchQuestionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tjf-Nb-0QZ"/>
                         <viewControllerLayoutGuide type="bottom" id="goQ-rC-7am"/>
@@ -119,13 +119,42 @@
                     <view key="view" contentMode="scaleToFill" id="NqK-Tz-twx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UuM-xl-boQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="ZSv-dJ-YXM">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SEARCH_CELL" rowHeight="100" id="miO-Xi-fzn">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="miO-Xi-fzn" id="zrA-W6-FZc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UuM-xl-boQ" firstAttribute="leading" secondItem="NqK-Tz-twx" secondAttribute="leadingMargin" constant="-16" id="46C-HB-R0b"/>
+                            <constraint firstItem="UuM-xl-boQ" firstAttribute="bottom" secondItem="NqK-Tz-twx" secondAttribute="bottomMargin" id="aaD-eD-uFx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UuM-xl-boQ" secondAttribute="trailing" constant="-16" id="blF-7Q-F0l"/>
+                            <constraint firstItem="UuM-xl-boQ" firstAttribute="top" secondItem="NqK-Tz-twx" secondAttribute="topMargin" id="tu2-y8-HyD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q1X-CW-MDU"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ZSv-dJ-YXM" id="TWW-D9-tjv"/>
+                        <outlet property="tableView" destination="UuM-xl-boQ" id="Zcu-tQ-PPA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6Q-n2-LaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="1043"/>
+            <point key="canvasLocation" x="970" y="1043"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kJP-dJ-LHI">

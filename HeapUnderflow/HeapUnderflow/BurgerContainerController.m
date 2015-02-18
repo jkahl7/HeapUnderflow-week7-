@@ -10,6 +10,7 @@
 #import "MenuViewController.h"
 #import "MenuDelegate.h"
 
+//TODO: make this an enum in the header file - preprocesser directives are frowned upon
 #define BURGERLOC 5            //burgerButton icon's location
 #define BURGERSIZE 50           //burgerButton icon's height + width
 #define ANIMATIONDURATION 0.3   //animateWithDuration's animation time
@@ -77,13 +78,16 @@
 {
   [super viewDidLoad];
   
-  self.SearchVC.view.frame = self.view.frame;
-  
+  //manually adding a childVC to the screen -> same as using container view + embed segue in SB
+  // step 1
   [self addChildViewController:self.SearchVC];
-  
+  // step 2 add a frame
+  self.SearchVC.view.frame = self.view.frame;
+  // step 3 add our new child view to our burger's view
   [self.view addSubview:self.SearchVC.view];
-  
+  // step 4 Called after the view controller is added or removed from a containerVC.
   [self.SearchVC didMoveToParentViewController:self];
+  
   
   self.topViewController = self.SearchVC;
   
@@ -93,8 +97,8 @@
   
   //ensures that the present VC is the target of the burgerButtonClicked method
   [self.burgerButton addTarget:self
-                   action:@selector(burgerButtonClicked)
-         forControlEvents:UIControlEventTouchUpInside];
+                        action:@selector(burgerButtonClicked)
+              forControlEvents:UIControlEventTouchUpInside];
   
   [self.topViewController.view addGestureRecognizer:self.slideRecognizer];
 }
@@ -126,6 +130,7 @@
   //removes the tapToCloseRecognizer from the view
   [self.topViewController.view removeGestureRecognizer:self.tapToCloseRecognizer];
   
+  //doesn't always need to be called - however it is safe to implement and avoid retain cycles
   __weak BurgerContainerController *weakSelf = self;
   
   [UIView animateWithDuration:ANIMATIONDURATION animations:^{

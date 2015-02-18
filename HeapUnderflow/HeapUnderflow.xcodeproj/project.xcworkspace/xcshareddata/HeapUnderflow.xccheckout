@@ -12,20 +12,24 @@
 	<dict>
 		<key>A1F9697C287118A0B8E3F3995A86CE633FBA7A47</key>
 		<string>https://github.com/jkahl7/week1TwitterClone.git</string>
+		<key>D89DAC63442F173F491C2D4937B3BCB27E2D4D12</key>
+		<string>https://github.com/jkahl7/HeapUnderflow-week7-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>StackOverflowClientWeek7/HeapUnderflow/HeapUnderflow.xcodeproj</string>
+	<string>HeapUnderflow/HeapUnderflow.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A1F9697C287118A0B8E3F3995A86CE633FBA7A47</key>
 		<string>../../../..</string>
+		<key>D89DAC63442F173F491C2D4937B3BCB27E2D4D12</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jkahl7/week1TwitterClone.git</string>
+	<string>https://github.com/jkahl7/HeapUnderflow-week7-.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>A1F9697C287118A0B8E3F3995A86CE633FBA7A47</string>
+	<string>D89DAC63442F173F491C2D4937B3BCB27E2D4D12</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A1F9697C287118A0B8E3F3995A86CE633FBA7A47</string>
 			<key>IDESourceControlWCCName</key>
-			<string>CodeFellowsHW</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D89DAC63442F173F491C2D4937B3BCB27E2D4D12</string>
+			<key>IDESourceControlWCCName</key>
+			<string>StackOverflowClientWeek7</string>
 		</dict>
 	</array>
 </dict>

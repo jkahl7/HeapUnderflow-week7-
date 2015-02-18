@@ -7,6 +7,9 @@
 //
 
 #import "SearchQuestionsViewController.h"
+#import "StackOverflowService.h"
+#import "QuestionCell.h"
+#import "Question.h"
 
 @interface SearchQuestionsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -14,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSArray *questions;
+
 
 @end
 
@@ -26,6 +30,9 @@
   self.tableView.delegate   = self;
   self.tableView.dataSource = self;
   self.searchBar.delegate   = self;
+  
+  [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]]
+                                                    forCellReuseIdentifier:@"SEARCH_CELL"];
 }
 
 
@@ -36,10 +43,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  //TODO: implement QuestionCell
-  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SEARCH_CELL" forIndexPath:indexPath];
+  QuestionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SEARCH_CELL" forIndexPath:indexPath];
   
-  cell.textLabel.text = @"default";
+  Question *question = self.questions[indexPath.row];
+  
+  cell.questionText.text = question.questionText;
+  
+  
+  //cell.imageView.image   = question.userAvatar;
+  
   
   return cell;
 }
@@ -50,5 +62,16 @@
   NSLog(@"row = %ld selected", indexPath.row);
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+  //TODO: look into adding some regex here to clean up the search
+  NSLog(@"searching for: %@",searchBar.text);
+  [[StackOverflowService sharedService] fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *results, NSString *errorString) {
+    //self.questions = [[NSArray alloc] initWithObjects:results, nil];
+    self.questions = results;
+    [self.tableView reloadData];
+    NSLog(@"%lu",(unsigned long)self.questions.count);
+  }];
+}
 
 @end

@@ -8,8 +8,11 @@
 
 #import "WebOAuthViewController.h"
 #import <WebKit/WebKit.h>
+#import "Constants.h"
 
 @interface WebOAuthViewController () <WKNavigationDelegate>
+
+
 
 @end
 
@@ -23,7 +26,11 @@
   WKWebView *webView         = [[WKWebView alloc] initWithFrame:self.view.frame];
   webView.navigationDelegate = self;
   
-  NSString *urlString = @"https://stackexchange.com/oauth/dialog?client_id=4285&scope=no_expiry&redirect_uri=https://stackexchange.com/oauth/login_success";
+  NSString *urlString = URL;
+  urlString = [urlString stringByAppendingString:CLIENTID];
+  urlString = [urlString stringByAppendingString:OAUTHSCOPE];
+  urlString = [urlString stringByAppendingString:REDIRECTURI];
+
   NSURL *url = [[NSURL alloc] initWithString:urlString];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
 
