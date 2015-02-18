@@ -30,7 +30,7 @@
   self.tableView.delegate   = self;
   self.tableView.dataSource = self;
   self.searchBar.delegate   = self;
-  
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
   [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]]
                                                     forCellReuseIdentifier:@"SEARCH_CELL"];
 }
@@ -47,11 +47,23 @@
   
   Question *question = self.questions[indexPath.row];
   
+  cell.userImage.image = nil;
+  if (!question.userAvatar)
+  {
+    [[StackOverflowService sharedService] fetchUserAvatar:question.imageURL
+                                    withCompletionHandler:^(UIImage *image) {
+      question.userAvatar  = image;
+      cell.userImage.image = question.userAvatar;
+    }];
+    [cell reloadInputViews];
+  } else {
+    cell.userImage.image = question.userAvatar;
+  }
+  
+  cell.userName.text     = question.userName;
   cell.questionText.text = question.questionText;
   
-  
-  //cell.imageView.image   = question.userAvatar;
-  
+ // [cell layoutIfNeeded];
   
   return cell;
 }
@@ -65,9 +77,8 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
   //TODO: look into adding some regex here to clean up the search
-  NSLog(@"searching for: %@",searchBar.text);
-  [[StackOverflowService sharedService] fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *results, NSString *errorString) {
-    //self.questions = [[NSArray alloc] initWithObjects:results, nil];
+  [[StackOverflowService sharedService] fetchQuestionsWithSearchTerm:searchBar.text
+                                                   completionHandler:^(NSArray *results, NSString *errorString) {
     self.questions = results;
     [self.tableView reloadData];
     NSLog(@"%lu",(unsigned long)self.questions.count);

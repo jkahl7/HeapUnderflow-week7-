@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Josh Kahl. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface StackOverflowService : NSObject
 
@@ -15,6 +15,6 @@
 - (void)fetchQuestionsWithSearchTerm:(NSString *)searchTerm
                    completionHandler:(void (^)(NSArray *results, NSString *errorString))completionHandler;
 
-- (UIImage)fetchUserAvatar:(NSString *)imageURL;
+- (void)fetchUserAvatar:(NSString *)imageURL withCompletionHandler:(void (^) (UIImage *image))completionHandler;
 
 @end
