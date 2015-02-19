@@ -62,9 +62,7 @@
   
   cell.userName.text     = question.userName;
   cell.questionText.text = question.questionText;
-  
- // [cell layoutIfNeeded];
-  
+    
   return cell;
 }
 
@@ -73,6 +71,7 @@
 {
   NSLog(@"row = %ld selected", indexPath.row);
 }
+
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {

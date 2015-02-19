@@ -11,10 +11,6 @@
 
 @implementation QuestionCell
 
-
-
-
-
 - (void)awakeFromNib
 {
 }

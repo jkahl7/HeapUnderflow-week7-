@@ -18,4 +18,12 @@ extern NSString *const REDIRECTURI;
 extern NSString *const FETCHURL;
 extern NSString *const SEARCH;
 
+//#define BURGERLOC 5            //burgerButton icon's location
+//#define BURGERSIZE 50           //burgerButton icon's height + width
+//#define ANIMATIONDURATION 0.3
+
+extern NSInteger const BURGERLOC;
+extern NSInteger const BURGERSIZE;
+extern float const ANIMATIONDURATION;
+
 @end

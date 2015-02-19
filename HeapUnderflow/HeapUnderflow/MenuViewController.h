@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuDelegate.h"
-
 @interface MenuViewController : UITableViewController
-
+                            //id -anyobject-  that conforms to -MenuDelegate protocol
 @property (weak, nonatomic) id<MenuDelegate> delegate;
 
 @end

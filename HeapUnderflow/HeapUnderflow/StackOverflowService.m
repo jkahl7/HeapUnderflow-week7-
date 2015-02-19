@@ -23,11 +23,10 @@
   return stackoverflowSharedService;
 }
 
-
+#pragma fetchQuestionsWithSearchTerm
 - (void)fetchQuestionsWithSearchTerm:(NSString *)searchTerm
                    completionHandler:(void (^)(NSArray *results, NSString *errorString))completionHandler
 {
-
   NSString *urlString = FETCHURL; // base url
   urlString = [urlString stringByAppendingString:SEARCH];
   urlString = [urlString stringByAppendingString:searchTerm];
@@ -89,7 +88,12 @@
   [dataTask resume];
 }
 
+- (void)fetchUserProfile:(void (^)(NSArray *results, NSString *errorString))completionHandler
+{
+  
+}
 
+#pragma fetchUserAvatar
 - (void)fetchUserAvatar:(NSString *)imageURL withCompletionHandler:(void (^) (UIImage *image))completionHandler
 {
   dispatch_queue_t imageQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0);

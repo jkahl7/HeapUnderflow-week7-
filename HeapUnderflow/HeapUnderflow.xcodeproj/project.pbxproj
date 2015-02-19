@@ -23,6 +23,8 @@
 		4357C42A1A93D08800EAA98F /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C4291A93D08800EAA98F /* Constants.m */; };
 		4357C42D1A9401F800EAA98F /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4357C42C1A9401F800EAA98F /* QuestionCell.m */; };
 		4357C42F1A94039900EAA98F /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4357C42E1A94039900EAA98F /* QuestionCell.xib */; };
+		43ECBD0F1A9543CD008DBC45 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECBD0E1A9543CC008DBC45 /* ProfileViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		43ECBD121A95658F008DBC45 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ECBD111A95658F008DBC45 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,6 @@
 		4357C4161A92980A00EAA98F /* BurgerContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerContainerController.m; sourceTree = "<group>"; };
 		4357C4181A92B6AC00EAA98F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		4357C4191A92B6AC00EAA98F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		4357C41B1A92B7A800EAA98F /* MenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDelegate.h; sourceTree = "<group>"; };
 		4357C41C1A92BA2C00EAA98F /* WebOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebOAuthViewController.h; sourceTree = "<group>"; };
 		4357C41D1A92BA2C00EAA98F /* WebOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebOAuthViewController.m; sourceTree = "<group>"; };
 		4357C41F1A92C40A00EAA98F /* SearchQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchQuestionsViewController.h; sourceTree = "<group>"; };
@@ -66,6 +67,11 @@
 		4357C42B1A9401F800EAA98F /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
 		4357C42C1A9401F800EAA98F /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		4357C42E1A94039900EAA98F /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		43ECBD0C1A95021A008DBC45 /* MenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuDelegate.h; path = ../MenuDelegate.h; sourceTree = "<group>"; };
+		43ECBD0D1A9543CC008DBC45 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		43ECBD0E1A9543CC008DBC45 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		43ECBD101A95658F008DBC45 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		43ECBD111A95658F008DBC45 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,13 +158,15 @@
 				4357C4161A92980A00EAA98F /* BurgerContainerController.m */,
 				4357C4221A93BC8300EAA98F /* StackOverflowService.h */,
 				4357C4231A93BC8300EAA98F /* StackOverflowService.m */,
-				4357C41B1A92B7A800EAA98F /* MenuDelegate.h */,
+				43ECBD0C1A95021A008DBC45 /* MenuDelegate.h */,
 				4357C4181A92B6AC00EAA98F /* MenuViewController.h */,
 				4357C4191A92B6AC00EAA98F /* MenuViewController.m */,
 				4357C41C1A92BA2C00EAA98F /* WebOAuthViewController.h */,
 				4357C41D1A92BA2C00EAA98F /* WebOAuthViewController.m */,
 				4357C41F1A92C40A00EAA98F /* SearchQuestionsViewController.h */,
 				4357C4201A92C40A00EAA98F /* SearchQuestionsViewController.m */,
+				43ECBD0D1A9543CC008DBC45 /* ProfileViewController.h */,
+				43ECBD0E1A9543CC008DBC45 /* ProfileViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,6 +187,8 @@
 			children = (
 				4357C4281A93D08800EAA98F /* Constants.h */,
 				4357C4291A93D08800EAA98F /* Constants.m */,
+				43ECBD101A95658F008DBC45 /* User.h */,
+				43ECBD111A95658F008DBC45 /* User.m */,
 				4357C4251A93C3CA00EAA98F /* Question.h */,
 				4357C4261A93C3CA00EAA98F /* Question.m */,
 				4357C3F01A92956400EAA98F /* HeapUnderflow.xcdatamodeld */,
@@ -287,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43ECBD121A95658F008DBC45 /* User.m in Sources */,
 				4357C4171A92980A00EAA98F /* BurgerContainerController.m in Sources */,
 				4357C3F21A92956400EAA98F /* HeapUnderflow.xcdatamodeld in Sources */,
 				4357C4211A92C40A00EAA98F /* SearchQuestionsViewController.m in Sources */,
@@ -297,6 +308,7 @@
 				4357C3EC1A92956400EAA98F /* main.m in Sources */,
 				4357C4271A93C3CA00EAA98F /* Question.m in Sources */,
 				4357C41A1A92B6AC00EAA98F /* MenuViewController.m in Sources */,
+				43ECBD0F1A9543CD008DBC45 /* ProfileViewController.m in Sources */,
 				4357C41E1A92BA2C00EAA98F /* WebOAuthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

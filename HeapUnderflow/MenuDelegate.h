@@ -2,7 +2,7 @@
 //  MenuDelegate.h
 //  HeapUnderflow
 //
-//  Created by Josh Kahl on 2/16/15.
+//  Created by Josh Kahl on 2/18/15.
 //  Copyright (c) 2015 Josh Kahl. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 
 @protocol MenuDelegate <NSObject>
 
-- (void)menuOptionSelected:(NSInteger)optionRow;
+- (void)menuOptionSelected:(NSInteger)selectedRow;
 
 @end

@@ -9,16 +9,19 @@
 #import "BurgerContainerController.h"
 #import "MenuViewController.h"
 #import "MenuDelegate.h"
+#import "Constants.h"
+#import "ProfileViewController.h"
 
-//TODO: make this an enum in the header file - preprocesser directives are frowned upon
-#define BURGERLOC 5            //burgerButton icon's location
-#define BURGERSIZE 50           //burgerButton icon's height + width
-#define ANIMATIONDURATION 0.3   //animateWithDuration's animation time
+//#define BURGERLOC 5            //burgerButton icon's location
+//#define BURGERSIZE 50           //burgerButton icon's height + width
+//#define ANIMATIONDURATION 0.3   //animateWithDuration's animation time
 
 @interface BurgerContainerController () <MenuDelegate>
 
 
 @property (strong, nonatomic) UINavigationController *SearchVC;
+@property (strong, nonatomic) ProfileViewController *ProfileVC;
+@property (strong, nonatomic) MenuViewController *MenuVC;
 
 @property (strong, nonatomic) UIViewController *topViewController;
 
@@ -28,6 +31,7 @@
 
 @property (strong, nonatomic) UIButton *burgerButton;
 
+@property (nonatomic) NSInteger index;
 
 @end
 
@@ -41,6 +45,24 @@
     _SearchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchVC"];
   }
   return _SearchVC;
+}
+
+- (ProfileViewController *)ProfileVC
+{
+  if (!_ProfileVC)
+  {
+    _ProfileVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileVC"];
+  }
+  return _ProfileVC;
+}
+
+- (MenuViewController *)MenuVC
+{
+  if(_MenuVC)
+  {
+    _MenuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuVC"];
+  }
+  return _MenuVC;
 }
 
 - (UIButton *)burgerButton
@@ -122,6 +144,22 @@
   }];
 }
 
+
+#pragma closePanel
+- (void)closePanel
+{
+  [self.topViewController.view removeGestureRecognizer:self.tapToCloseRecognizer];
+  
+  __weak BurgerContainerController *weakSelf = self;
+  
+  [UIView animateWithDuration:ANIMATIONDURATION animations:^{
+    weakSelf.topViewController.view.center = weakSelf.view.center;
+  } completion:^(BOOL finished) {
+    weakSelf.burgerButton.userInteractionEnabled = true;
+  }];
+}
+
+
 #pragma tapToClose
 - (void)tapToClose
 {
@@ -137,6 +175,7 @@
     weakSelf.topViewController.view.center = weakSelf.view.center;
   } completion:^(BOOL finished) {
     self.burgerButton.userInteractionEnabled = true;
+    [self tapToClose];
   }];
 }
 
@@ -189,12 +228,79 @@
   }
 }
 
-#pragma menuOptionSelected
-- (void)menuOptionSelected:(NSInteger)optionRow
+#pragma switchToViewController
+- (void)switchToViewController:(UIViewController *)destinationVC
 {
-  NSLog(@"%ld",(long)optionRow);
+  __weak BurgerContainerController *weakSelf = self;
+  [UIView animateWithDuration:ANIMATIONDURATION animations:^{
+    CGSize tempSize = weakSelf.view.frame.size; //temp variable to clean up code in CGRectMake
+    weakSelf.topViewController.view.frame = CGRectMake(tempSize.width, 0, tempSize.width, tempSize.height);
+  } completion:^(BOOL finished) {
+    destinationVC.view.frame = self.topViewController.view.frame;
+    
+    [self.topViewController.view removeGestureRecognizer:self.slideRecognizer];
+    [self.burgerButton removeFromSuperview];
+    [self.topViewController willMoveToParentViewController:nil];
+    [self.topViewController.view removeFromSuperview];
+    [self.topViewController removeFromParentViewController];
+    
+    self.topViewController = destinationVC;
+    
+    [self addChildViewController:self.topViewController];
+    [self.view addSubview:self.topViewController.view];
+    [self.topViewController didMoveToParentViewController:self];
+    [self.topViewController.view addGestureRecognizer:self.slideRecognizer];
+    [self.topViewController.view addSubview:self.burgerButton];
+  
+    [self closePanel];
+  }];
 }
 
+#pragma menuOptionSelected
+- (void)menuOptionSelected:(NSInteger)selectedRow
+{
+  //check of the selected row is == to the present topVC
+  if (self.index == selectedRow)
+  {
+    [self closePanel];
+  } else {
+    self.index = selectedRow;
+    UIViewController *destinationVC;
+    switch (selectedRow)
+    {
+      case 0:
+      {
+        destinationVC = self.SearchVC;
+        break;
+      }
+      case 1:
+      {
+        NSLog(@"this doesnt go anywhere yet....");
+        break;
+      }
+      case 2:
+      {
+        destinationVC = self.ProfileVC;
+        break;
+      }
+      default:
+      {
+        NSLog(@"default switch case reached");
+        break;
+      }
+    }
+    [self switchToViewController:destinationVC];
+  }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([segue.identifier isEqualToString:@"EMBED_MENU"])
+  {
+    MenuViewController *destinationVC = segue.destinationViewController;
+    destinationVC.delegate = self;
+  }
+}
 
 @end
 
