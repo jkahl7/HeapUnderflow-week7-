@@ -83,6 +83,8 @@
   
   toVC.answerURL = localQuestion.answerURL;
   
+  [self.delegate setBurgerIconHidden:YES];
+  
   [self.navigationController pushViewController:toVC animated:YES];
   
   NSLog(@"row = %ld selected", indexPath.row);
@@ -99,5 +101,7 @@
     NSLog(@"%lu",(unsigned long)self.questions.count);
   }];
 }
+
+
 
 @end

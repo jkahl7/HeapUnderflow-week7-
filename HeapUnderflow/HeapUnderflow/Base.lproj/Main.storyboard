@@ -168,9 +168,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-pR-QYs">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-pR-QYs">
                                 <rect key="frame" x="282" y="282" width="37" height="37"/>
-                                <color key="color" red="0.0010258838383838675" green="0.0010258838383838675" blue="0.0010258838383838675" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.40538194444444442" green="0.076567275866209206" blue="0.042953460122066821" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-Mx-N8P">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>

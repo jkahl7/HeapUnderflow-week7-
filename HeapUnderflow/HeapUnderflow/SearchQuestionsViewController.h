@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BurgerDelegate.h"
 
 @interface SearchQuestionsViewController : UIViewController
+
+//TODO: be sure to pass the BurgerContainerCont
+@property (weak, nonatomic) id<BurgerDelegate> delegate;
 
 @end

@@ -123,6 +123,8 @@
               forControlEvents:UIControlEventTouchUpInside];
   
   [self.topViewController.view addGestureRecognizer:self.slideRecognizer];
+  
+  //self.burgerButton.hidden = !self.burgerButton.hidden;
 }
 
 
@@ -302,6 +304,8 @@
     destinationVC.delegate = self;
   }
 }
+
+
 
 @end
 

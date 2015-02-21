@@ -17,8 +17,6 @@
 @implementation AnswerViewController
 
 
-
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -33,6 +31,8 @@
   [self.webView loadRequest:request];
   self.activityIndicator.hidden = YES;
 }
+
+
 
 
 @end
