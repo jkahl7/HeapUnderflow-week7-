@@ -9,6 +9,7 @@
 #import "StackOverflowService.h"
 #import "Constants.h"
 #import "Question.h"
+#import "User.h"
 
 @implementation StackOverflowService
 
@@ -36,7 +37,7 @@
   NSString *token = [userDefaults objectForKey:@"token"];
   if (token)
   {
-    urlString = [urlString stringByAppendingString:@"&access_token="];
+    urlString = [urlString stringByAppendingString:ACCESS];
     urlString = [urlString stringByAppendingString:token];
     urlString = [urlString stringByAppendingString:KEY];
   }
@@ -47,7 +48,8 @@
   //every app has a nsurlShared session you can use
   NSURLSession *session = [NSURLSession sharedSession];
   
-  NSURLSessionTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+  NSURLSessionTask *dataTask = [session dataTaskWithRequest:request
+                                          completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
   {
     if (error)
     {
@@ -88,9 +90,71 @@
   [dataTask resume];
 }
 
-- (void)fetchUserProfile:(void (^)(NSArray *results, NSString *errorString))completionHandler
+#pragma fetchUserProfile
+- (void)fetchUserProfile:(void (^)(User *userInfo, NSString *errorString))completionHandler
 {
-  
+  NSString *baseURL = URL;
+  baseURL = [baseURL stringByAppendingString:USER];
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSString *token = [userDefaults objectForKey:@"token"];
+ 
+  if (token)
+  {
+    baseURL = [baseURL stringByAppendingString:ACCESS];
+    baseURL = [baseURL stringByAppendingString:token];
+    baseURL = [baseURL stringByAppendingString:KEY];
+  }
+
+  NSURL *url = [NSURL URLWithString:baseURL];
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+  request.HTTPMethod = @"GET";
+  NSURLSession *session = [NSURLSession sharedSession];
+  //Tasks are always part of a session; you create a task by calling one of the task creation methods on an NSURLSession object.
+  NSURLSessionTask *dataTask = [session dataTaskWithRequest:request
+                                          completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+  {
+    if (error)
+    {
+      NSLog(@"error in dataTask: %@",error);
+      dispatch_async(dispatch_get_main_queue(), ^{
+        completionHandler(nil, @"error in dataTask");
+      });
+    } else {
+      NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+      NSInteger taskResponse = httpResponse.statusCode;
+      
+      switch (taskResponse)
+      {
+        case 200 ... 299:
+        {
+          NSLog(@"%ld", (long)taskResponse);
+          User *user = [User userProfileData:data];
+          dispatch_async(dispatch_get_main_queue(), ^{
+            if (user)
+            {
+              NSLog(@"user not nil: %@", user.userName);
+              completionHandler(user, nil);
+
+            } else {
+              NSLog(@"problems: %@",user.userName);
+              completionHandler(nil,@"issue with json results");
+            }
+          });
+          break;
+        }
+        case 300 ... 599:
+        {
+          NSLog(@"%ld", (long)taskResponse);
+          break;
+        }
+        default:
+        {
+          break;
+        }
+      }
+    }
+  }];
+  [dataTask resume];
 }
 
 #pragma fetchUserAvatar

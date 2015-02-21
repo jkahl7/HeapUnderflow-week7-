@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface StackOverflowService : NSObject
 
@@ -15,7 +16,7 @@
 - (void)fetchQuestionsWithSearchTerm:(NSString *)searchTerm
                    completionHandler:(void (^)(NSArray *results, NSString *errorString))completionHandler;
 
-- (void)fetchUserProfile:(void (^)(NSArray *results, NSString *errorString))completionHandler;
+- (void)fetchUserProfile:(void (^)(User *userInfo, NSString *errorString))completionHandler;
 
 - (void)fetchUserAvatar:(NSString *)imageURL withCompletionHandler:(void (^) (UIImage *image))completionHandler;
 

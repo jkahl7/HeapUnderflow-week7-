@@ -20,6 +20,7 @@ NSString *const FETCHURL = @"https://api.stackexchange.com/2.2/";
 NSString *const SEARCH   = @"search?order=desc&sort=activity&site=stackoverflow&intitle=";
 NSString *const KEY      = @"&key=uVvOtWqLKqWyHIi3r9xt0A((";
 NSString *const USER     = @"me?order=desc&sort=name&site=stackoverflow&intitle=";
+NSString *const ACCESS   = @"&access_token=";
 
 NSInteger const BURGERLOC     = 5;
 NSInteger const BURGERSIZE    = 50;

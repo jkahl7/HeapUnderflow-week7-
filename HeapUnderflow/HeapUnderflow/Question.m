@@ -31,6 +31,16 @@
       userQuestion.userName = owner[@"display_name"];
       userQuestion.imageURL = owner[@"profile_image"];
       userQuestion.questionText = item[@"title"];
+      userQuestion.answerURL = item[@"link"];
+      
+      //NSLog(item[@"answer_count"] ? @"YES" : @"NO");
+      if (item[@"is_answered"] != 0)
+      {
+        userQuestion.answered = YES;
+      } else {
+        userQuestion.answered = NO;
+      }
+      
       [tempResults addObject:userQuestion];
     }
     NSArray *results = [[NSArray alloc] initWithArray:tempResults];

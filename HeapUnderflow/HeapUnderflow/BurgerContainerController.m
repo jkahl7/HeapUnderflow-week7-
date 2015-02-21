@@ -276,6 +276,7 @@
       case 1:
       {
         NSLog(@"this doesnt go anywhere yet....");
+        destinationVC = self.SearchVC;
         break;
       }
       case 2:

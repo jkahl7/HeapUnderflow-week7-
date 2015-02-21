@@ -10,4 +10,35 @@
 
 @implementation User
 
+/*- (User *)initWithJsonData:(NSData *)jsonData
+{
+  if (!jsonData)
+  {
+    NSLog(@"init fail - jsonData: %@", jsonData);
+  } else {
+    NSError *error;
+    NSDictionary *serializedJSON = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    self.userName = serializedJSON[@"display_name"];
+  }
+}
+*/
+
++ (User *)userProfileData:(NSData *)jsonData
+{
+  if (!jsonData)
+  {
+    NSLog(@"error with getting JSONobjectsWithData");
+    return nil;
+  } else {
+    NSError *error;
+    NSDictionary *userJsonData = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                 options:0
+                                                                   error:&error];
+    User *user = [[User alloc]init];
+    user.userName = userJsonData[@"display_name"];
+    return user;
+  }
+}
+
+
 @end

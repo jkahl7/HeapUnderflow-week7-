@@ -10,4 +10,10 @@
 
 @interface User : NSObject
 
+@property (strong, nonatomic) NSString *userName;
+
+//- (User *)initWithJsonData:(NSData *)jsonData;
+
++ (User *)userProfileData:(NSData *)jsonData;
+
 @end

@@ -10,6 +10,7 @@
 #import "StackOverflowService.h"
 #import "QuestionCell.h"
 #import "Question.h"
+#import "AnswerViewController.h"
 
 @interface SearchQuestionsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -62,13 +63,28 @@
   
   cell.userName.text     = question.userName;
   cell.questionText.text = question.questionText;
-    
+  
+  if (question.answered)
+  {
+    cell.userName.textColor = [UIColor greenColor];
+  } else {
+    cell.userName.textColor = [UIColor redColor];
+  }
+
   return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  AnswerViewController *toVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AnswerVC"];
+  
+  Question *localQuestion = self.questions[indexPath.row];
+  
+  toVC.answerURL = localQuestion.answerURL;
+  
+  [self.navigationController pushViewController:toVC animated:YES];
+  
   NSLog(@"row = %ld selected", indexPath.row);
 }
 

@@ -106,7 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6QR-jo-9X0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="261"/>
+            <point key="canvasLocation" x="1147" y="243"/>
         </scene>
         <!--SearchQuestionsViewController-->
         <scene sceneID="VzW-P4-MSU">
@@ -155,6 +155,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6Q-n2-LaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944" y="1043"/>
+        </scene>
+        <!--Answer View Controller-->
+        <scene sceneID="b8P-1y-5OK">
+            <objects>
+                <viewController storyboardIdentifier="AnswerVC" id="sRu-Ef-KPm" customClass="AnswerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PZn-2E-CsT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Avx-rv-HtF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P8c-4V-1H7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gg4-pR-QYs">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" red="0.0010258838383838675" green="0.0010258838383838675" blue="0.0010258838383838675" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-Mx-N8P">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Gg4-pR-QYs" secondAttribute="centerX" id="7oL-nz-sKv"/>
+                            <constraint firstAttribute="centerY" secondItem="Gg4-pR-QYs" secondAttribute="centerY" id="GCV-0Z-n0t"/>
+                            <constraint firstAttribute="trailing" secondItem="tcI-Mx-N8P" secondAttribute="trailing" id="VAG-pe-Ihl"/>
+                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="leading" secondItem="P8c-4V-1H7" secondAttribute="leading" id="VZA-qr-O2f"/>
+                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="bottom" secondItem="Avx-rv-HtF" secondAttribute="top" id="aLa-BP-U5N"/>
+                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="top" secondItem="P8c-4V-1H7" secondAttribute="top" id="ghn-Eu-dC9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Gg4-pR-QYs" id="H1f-dr-IRv"/>
+                        <outlet property="webView" destination="tcI-Mx-N8P" id="uBa-fX-UoA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQZ-5Y-RpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="1043"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kJP-dJ-LHI">

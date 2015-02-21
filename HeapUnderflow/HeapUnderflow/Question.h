@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSString *imageURL;
 @property (strong, nonatomic) NSString *userName;
 @property (strong, nonatomic) NSString *questionText;
+@property (strong, nonatomic) NSString *answerURL;
+@property (nonatomic) BOOL answered;
 
 @property (strong, nonatomic) UIImage  *userAvatar;
 

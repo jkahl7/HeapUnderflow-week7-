@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import "StackOverflowService.h"
+#import "User.h"
 
 @interface ProfileViewController () <UIScrollViewDelegate>
 
@@ -20,6 +22,11 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+
+
+  [[StackOverflowService sharedService] fetchUserProfile:^(User *userInfo, NSString *errorString) {
+    NSLog(@"user info: %@",userInfo.userName);
+  }];
   
   self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
   self.scrollView.contentSize = CGSizeMake(1000, self.view.frame.size.width);
