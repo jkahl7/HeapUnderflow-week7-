@@ -19,9 +19,7 @@
 
 @property (strong, nonatomic) NSArray *questions;
 
-
 @end
-
 
 @implementation SearchQuestionsViewController
 
@@ -31,11 +29,16 @@
   self.tableView.delegate   = self;
   self.tableView.dataSource = self;
   self.searchBar.delegate   = self;
-  self.tableView.rowHeight = UITableViewAutomaticDimension;
-  [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]]
-                                                    forCellReuseIdentifier:@"SEARCH_CELL"];
+  
+  [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell"
+                                             bundle:[NSBundle mainBundle]]
+                             forCellReuseIdentifier:@"SEARCH_CELL"];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -70,7 +73,9 @@
   } else {
     cell.userName.textColor = [UIColor redColor];
   }
-
+  
+  [cell reloadInputViews];
+  
   return cell;
 }
 
@@ -82,8 +87,6 @@
   Question *localQuestion = self.questions[indexPath.row];
   
   toVC.answerURL = localQuestion.answerURL;
-  
-  [self.delegate setBurgerIconHidden:YES];
   
   [self.navigationController pushViewController:toVC animated:YES];
   

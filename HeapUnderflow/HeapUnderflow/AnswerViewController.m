@@ -22,6 +22,8 @@
   [super viewDidLoad];
   [self.activityIndicator isAnimating];
   self.activityIndicator.hidden = NO;
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"HideBurgerButton"
+                                                      object:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -33,6 +35,10 @@
 }
 
 
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"HideBurgerButton"
+                                                      object:self];
+}
 
 @end

@@ -110,7 +110,6 @@
   // step 4 Called after the view controller is added or removed from a containerVC.
   [self.SearchVC didMoveToParentViewController:self];
   
-  
   self.topViewController = self.SearchVC;
   
   [self.burgerButton setBackgroundImage: [UIImage imageNamed:@"hamburger"] forState:UIControlStateNormal];
@@ -124,7 +123,40 @@
   
   [self.topViewController.view addGestureRecognizer:self.slideRecognizer];
   
-  //self.burgerButton.hidden = !self.burgerButton.hidden;
+  NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+  [center addObserver:self
+             selector:@selector(hideBurgerButton)
+                 name:@"HideBurgerButton"
+               object:nil];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+  NSLog(@"didAppear");
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+  NSLog(@"willAppear");
+
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+  NSLog(@"didDisappear");
+
+}
+
+-(void)viewDidLayoutSubviews
+{
+  NSLog(@"didLayout");
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+  NSLog(@"willDissapear");
 }
 
 
@@ -305,7 +337,10 @@
   }
 }
 
-
+- (void)hideBurgerButton
+{
+  self.burgerButton.hidden = !self.burgerButton.hidden;
+}
 
 @end
 

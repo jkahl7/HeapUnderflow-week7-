@@ -173,7 +173,7 @@
                                 <color key="color" red="0.40538194444444442" green="0.076567275866209206" blue="0.042953460122066821" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-Mx-N8P">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
@@ -181,10 +181,10 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Gg4-pR-QYs" secondAttribute="centerX" id="7oL-nz-sKv"/>
                             <constraint firstAttribute="centerY" secondItem="Gg4-pR-QYs" secondAttribute="centerY" id="GCV-0Z-n0t"/>
-                            <constraint firstAttribute="trailing" secondItem="tcI-Mx-N8P" secondAttribute="trailing" id="VAG-pe-Ihl"/>
-                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="leading" secondItem="P8c-4V-1H7" secondAttribute="leading" id="VZA-qr-O2f"/>
-                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="bottom" secondItem="Avx-rv-HtF" secondAttribute="top" id="aLa-BP-U5N"/>
-                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="top" secondItem="P8c-4V-1H7" secondAttribute="top" id="ghn-Eu-dC9"/>
+                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="bottom" secondItem="P8c-4V-1H7" secondAttribute="bottomMargin" id="MUr-dg-YFb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tcI-Mx-N8P" secondAttribute="trailing" constant="-16" id="OCc-IQ-C87"/>
+                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="leading" secondItem="P8c-4V-1H7" secondAttribute="leadingMargin" constant="-16" id="lFS-tq-39h"/>
+                            <constraint firstItem="tcI-Mx-N8P" firstAttribute="top" secondItem="P8c-4V-1H7" secondAttribute="topMargin" constant="60" id="sIP-6g-LPP"/>
                         </constraints>
                     </view>
                     <connections>
