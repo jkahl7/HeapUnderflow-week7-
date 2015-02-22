@@ -24,4 +24,7 @@ extern NSInteger const BURGERLOC;
 extern NSInteger const BURGERSIZE;
 extern float const ANIMATIONDURATION;
 
+extern NSInteger const LABELWIDTH;
+extern NSInteger const LABELHEIGHT;
+
 @end

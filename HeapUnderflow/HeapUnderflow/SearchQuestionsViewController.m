@@ -11,6 +11,7 @@
 #import "QuestionCell.h"
 #import "Question.h"
 #import "AnswerViewController.h"
+#import "Constants.h"
 
 @interface SearchQuestionsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -29,7 +30,9 @@
   self.tableView.delegate   = self;
   self.tableView.dataSource = self;
   self.searchBar.delegate   = self;
-  
+  self.tableView.rowHeight = 100;
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+
   [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell"
                                              bundle:[NSBundle mainBundle]]
                              forCellReuseIdentifier:@"SEARCH_CELL"];
@@ -37,7 +40,11 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-  self.tableView.rowHeight = UITableViewAutomaticDimension;
+  [UIView animateWithDuration: 0.2 animations:^{
+    self.tableView.alpha = 1.0;
+  }];
+  
+  [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -74,8 +81,6 @@
     cell.userName.textColor = [UIColor redColor];
   }
   
-  [cell reloadInputViews];
-  
   return cell;
 }
 
@@ -91,6 +96,11 @@
   [self.navigationController pushViewController:toVC animated:YES];
   
   NSLog(@"row = %ld selected", indexPath.row);
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+  self.tableView.alpha = 0.0;
 }
 
 

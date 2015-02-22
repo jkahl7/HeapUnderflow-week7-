@@ -130,34 +130,6 @@
                object:nil];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-  NSLog(@"didAppear");
-
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-  NSLog(@"willAppear");
-
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-  NSLog(@"didDisappear");
-
-}
-
--(void)viewDidLayoutSubviews
-{
-  NSLog(@"didLayout");
-
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-  NSLog(@"willDissapear");
-}
 
 
 #pragma burgerButtonClicked
@@ -337,6 +309,7 @@
   }
 }
 
+#pragma hideBurgerButton //this method will either hide or unhide the burger button
 - (void)hideBurgerButton
 {
   self.burgerButton.hidden = !self.burgerButton.hidden;

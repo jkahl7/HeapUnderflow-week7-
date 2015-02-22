@@ -9,14 +9,26 @@
 #import "ProfileViewController.h"
 #import "StackOverflowService.h"
 #import "User.h"
+#import "Constants.h"
 
 @interface ProfileViewController () <UIScrollViewDelegate>
 
 @property (retain, nonatomic) UIScrollView *scrollView;
 @property (retain, nonatomic) UIImageView *imageView;
+@property (retain, nonatomic) UILabel *userName;
+
 @end
 
 @implementation ProfileViewController
+
+- (UILabel *)userName
+{
+  if (!_userName)
+  {
+    _userName = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, LABELWIDTH, LABELWIDTH)];
+  }
+  return _userName;
+}
 
 
 - (void)viewDidLoad
@@ -25,17 +37,18 @@
 
 
   [[StackOverflowService sharedService] fetchUserProfile:^(User *userInfo, NSString *errorString) {
-    NSLog(@"user info: %@",userInfo.userName);
+    self.userName.text = userInfo.userName;
+    NSLog(@"%@", userInfo);
   }];
-  
   self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
   self.scrollView.contentSize = CGSizeMake(1000, self.view.frame.size.width);
   self.scrollView.backgroundColor = [UIColor redColor];
   
   [self.view addSubview:self.scrollView];
+  [self.view addSubview:self.userName];
   
   self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
-  self.imageView.image = [UIImage imageNamed:@"background0"];
+  self.imageView.image = [UIImage imageNamed:@"canhaz"];
   [self.scrollView addSubview:self.imageView];
   
 }
