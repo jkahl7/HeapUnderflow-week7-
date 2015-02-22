@@ -22,8 +22,8 @@ NSString *const KEY      = @"&key=uVvOtWqLKqWyHIi3r9xt0A((";
 NSString *const USER     = @"me?order=desc&sort=name&site=stackoverflow&intitle=";
 NSString *const ACCESS   = @"&access_token=";
 
-NSInteger const LABELW = 250;
-NSInteger const LABELH = 100;
+NSInteger const LABELWIDTH  = 250;
+NSInteger const LABELHEIGHT = 100;
 
 NSInteger const BURGERLOC     = 5;
 NSInteger const BURGERSIZE    = 50;
