@@ -58,6 +58,7 @@
 {
   [self.imageView release];
   [self.scrollView release];
+  [self.userName release];
   [super dealloc];
 }
 

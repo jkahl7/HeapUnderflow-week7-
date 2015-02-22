@@ -315,6 +315,11 @@
   self.burgerButton.hidden = !self.burgerButton.hidden;
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end
 
 
